@@ -1,0 +1,25 @@
+<html>
+  <head>
+      <title>Face and Eyes detection Application</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	    <link rel="stylesheet" href="static/bootstrap.css"  media="screen" />
+  </head>
+
+  <body>
+    <div class="container">
+        <br> <center><h2> Real-time Face and Eyes Detection Application</h2></center><br>
+
+        <h5 align="justify">This application detects faces and eyes of one or more persons posed within the window, in real-time.
+          This is developed and implemented using <a href="https://opencv.org" target="_blank">OpenCV</a>, a real-time Open Source Computer Vision Library.
+          <a href="http://flask.pocoo.org/" target="_blank">Flask microframework</a> is used for
+          real-time video streaming that streams video from user's camera to server and back to user's browser after detecting object(s).<br><br>
+
+          Detect face and eyes by posing yourself within the below window.</h5><br>
+
+        <center> <img src="{{ url_for('video_feed') }}" alt="If video window doesn't show-up try using Google Chrome browser" /> </center>
+        <p align="right"><b>- <a href="http://www.socratesk.com" target="_blank">Socrates</a></b></p>
+    </div>
+  </body>
+</html>
