@@ -18,6 +18,6 @@ def gen(camera):
 def video_feed():
     return Response(gen(VideoCamera()), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-if __name__ == '__main__':
-    #app.run(host='0.0.0.0', debug=False)
-    app.run(debug=False)
+if __name__ == "__main_":
+    app.run(host='0.0.0.0')		# For Heroku server
+    #app.run(debug=False)		# For local machine
