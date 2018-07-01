@@ -1,6 +1,7 @@
 
 from flask import Flask, render_template, Response
 from camera import VideoCamera
+import os
 
 app = Flask(__name__)
 
@@ -19,5 +20,6 @@ def video_feed():
     return Response(gen(VideoCamera()), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main_":
-    app.run(host='0.0.0.0')		# For Heroku server
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)		# For Heroku server
     #app.run(debug=False)		# For local machine
