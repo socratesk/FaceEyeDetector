@@ -19,16 +19,8 @@ def gen(camera):
 def video_feed():
     return Response(gen(VideoCamera()), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-# Included these lines just to try that it works on Heroku server.
-# Comment these lines if you are running in local machine
-port = int(os.environ.get("PORT", 5000))
-app.run(host='0.0.0.0', port=port)		# For Heroku server
 
-# Commented the below code just to try that it works on Heroku server.
-# But, if you run it in local machine, Keep this main method
-#if __name__ == "__main_":
-#    port = int(os.environ.get("PORT", 5000)) # For Heroku server
-#    app.run(host='0.0.0.0', port=port)		# For Heroku server
-
-
+if __name__ == "__main_":
+    port = int(os.environ.get("PORT", 5000)) # For Heroku server
+    app.run(host='0.0.0.0', port=port)		# For Heroku server
     #app.run(debug=False)		# For local machine
