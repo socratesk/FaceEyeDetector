@@ -1,1 +1,1 @@
-web: gunicorn FaceDetector:app
+web: gunicorn FaceDetector:app --bind 0.0.0.0:${PORT} wsgi
