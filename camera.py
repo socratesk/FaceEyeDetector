@@ -16,6 +16,7 @@ class VideoCamera(object):
 
     def get_frame(self):
         success, image = self.video.read()
+        image = cv2.flip(image, 1)  # Flip image vertically
         gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         # Detect faces
@@ -31,7 +32,7 @@ class VideoCamera(object):
 
             # Detect eyes
             eyes = eye_cascade.detectMultiScale(face_gray, scaleFactor=1.1)
-            
+
             # Execute only if the number of eyes object identified is less than 3
             if len(eyes) < 3:
                 for ex, ey, ew, eh in eyes:
