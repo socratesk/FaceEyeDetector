@@ -1,1 +1,1 @@
-web: gunicorn FaceDetector:app --bind 0.0.0.0:5000
+web: gunicorn FaceDetector:app
